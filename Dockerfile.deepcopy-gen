@@ -1,0 +1,6 @@
+FROM busybox
+MAINTAINER Brendan Creane, brendan@tigera.io
+
+COPY ./deepcopy-gen /usr/bin/deepcopy-gen
+
+ENTRYPOINT ["/usr/bin/deepcopy-gen"]
