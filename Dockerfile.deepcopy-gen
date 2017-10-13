@@ -1,6 +1,8 @@
-FROM busybox
+FROM ubuntu
 MAINTAINER Brendan Creane, brendan@tigera.io
 
 COPY ./deepcopy-gen /usr/bin/deepcopy-gen
+RUN chmod +x /usr/bin/deepcopy-gen
+RUN apt-get update && apt-get install -y file
 
-ENTRYPOINT ["/usr/bin/deepcopy-gen"]
+ENTRYPOINT ["deepcopy-gen"]
